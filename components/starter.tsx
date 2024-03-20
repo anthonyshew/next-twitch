@@ -9,6 +9,8 @@ import { Avatar, AvatarImage } from "#components/ui/avatar.tsx";
 export function Starter() {
   return (
     <div className="flex h-screen bg-[#0e0e10]">
+      {/* Background dimmer! */}
+      {/* <div className="absolute z-10 bg-black/35 h-screen w-screen"></div> */}
       <aside className="w-16 flex flex-col items-center py-4 space-y-4 bg-[#18181b]">
         <HomeIcon className="text-white" />
         <CompassIcon className="text-white" />
@@ -17,7 +19,7 @@ export function Starter() {
         <CogIcon className="text-white" />
         <UserCircleIcon className="text-white" />
       </aside>
-      <main className="flex-grow">
+      <main className="flex-grow overflow-auto no-scrollbar">
         <header className="flex items-center justify-end px-4 py-2 bg-[#18181b]">
           <div className="flex items-center space-x-4">
             <Input className="rounded-md" placeholder="Search" type="search" />
@@ -26,37 +28,60 @@ export function Starter() {
         <div className="relative">
           <img
             alt="Live stream content"
-            className="w-full"
-            height="720"
+            className="w-full h-[60vh]"
             src="https://generated.vusercontent.net/placeholder.svg"
             style={{
-              aspectRatio: "1280/720",
+              filter: "invert(90%)",
               objectFit: "cover",
             }}
             width="1280"
           />
-          <div className="flex items-center w-full mt-4 px-4 space-x-2">
-            <Avatar>
-              <AvatarImage
-                alt="Streamer avatar"
-                src="https://github.com/anthonyshew.png"
-              />
-            </Avatar>
-            <div className="flex gap-3 items-center justify-between w-full">
-              <div className="flex gap-2">
-                <p className="text-white">anthonyshew</p>
-              </div>
-              <div className="flex gap-4 items-center">
-                <p className="flex gap-2 text-red-600 font-semibold">
-                  <UserCircleIcon />
-                  12
-                </p>
-                <Button variant="secondary">Follow</Button>
-                <Button>Subscribe</Button>
-              </div>
+        </div>
+        <div className="flex items-center w-full mt-4 px-4 space-x-2">
+          <Avatar>
+            <AvatarImage
+              alt="Streamer avatar"
+              src="https://github.com/anthonyshew.png"
+            />
+          </Avatar>
+          <div className="flex gap-3 items-center justify-between w-full">
+            <div className="flex gap-2">
+              <p className="text-white">anthonyshew</p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <p className="flex z-30 gap-2 text-red-600 font-semibold">
+                <UserCircleIcon />
+                12
+              </p>
+              <Button variant="secondary">Follow</Button>
+              <Button>Subscribe</Button>
             </div>
           </div>
-          <div className=""></div>
+        </div>
+        <div className="flex flex-col mt-4 px-4 gap-4">
+          <p className="font-bold text-lg">Bio</p>
+          <p>
+            Anthony is a full-stack comedian that loves to teach stuff about
+            Turborepo, Turbopack, and Next.js!
+          </p>
+          <p className="font-bold text-lg">Links</p>
+          <div className="flex gap-4">
+            <a className="flex items-center gap-2" href="">
+              X
+            </a>
+
+            <a className="flex items-center gap-2" href="">
+              YouTube
+            </a>
+
+            <a className="flex items-center gap-2" href="">
+              Threads
+            </a>
+
+            <a className="flex items-center gap-2" href="">
+              GitHub
+            </a>
+          </div>
         </div>
       </main>
       <aside className="w-80 py-4 px-2 h-screen flex flex-col gap-4 overflow-hidden bg-[#18181b]">
