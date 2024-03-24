@@ -1,6 +1,7 @@
+import { Suspense } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import { UserCircleIcon } from "lucide-react";
 import { Button } from "./ui/button";
+import { ViewCount } from "./view-count";
 
 export const VideoInfo = () => {
   return (
@@ -16,10 +17,9 @@ export const VideoInfo = () => {
           <p className="text-white">anthonyshew</p>
         </div>
         <div className="flex gap-4 items-center">
-          <p className="flex z-30 gap-2 text-red-600 font-semibold">
-            <UserCircleIcon />
-            12
-          </p>
+          <Suspense fallback={<p>Loading...</p>}>
+            <ViewCount />
+          </Suspense>
           <Button variant="secondary">Follow</Button>
           <Button>Subscribe</Button>
         </div>
