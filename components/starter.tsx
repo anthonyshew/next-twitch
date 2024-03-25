@@ -8,12 +8,5 @@ import { Main } from "./main";
 
 export function Starter() {
   return (
-    <div className="flex h-screen bg-[#0e0e10]">
-      {/* Background dimmer! */}
-      {/* <div className="absolute z-10 bg-black/35 h-screen w-screen"></div> */}
-      <LeftNav />
-      <Main />
-      <Chat />
-    </div>
   );
 }

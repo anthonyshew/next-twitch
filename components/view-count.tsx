@@ -1,27 +1,19 @@
 "use client";
 
 import { UserCircleIcon } from "lucide-react";
-import { useEffect, useState } from "react";
-import { viewCountAction } from "./view-count-action";
+import useSWR from "swr";
 
-export const ViewCount = ({ daNumba }: { daNumba: number }) => {
-  const [viewCount, setViewCount] = useState<number>(daNumba);
-
-  useEffect(() => {
-    const myInterval = setInterval(async () => {
-      // TODO: Handle this 0 better.
-      setViewCount((await viewCountAction()) ?? 0);
-    }, 5000);
-
-    return () => {
-      clearInterval(myInterval);
-    };
-  }, []);
+export const ViewCount = () => {
+  const { data } = useSWR(
+    "viewCount",
+    () => fetch("/api/get-view-count").then((res) => res.json()),
+    { refreshInterval: 2 },
+  );
 
   return (
     <p className="flex z-30 gap-2 text-red-600 font-semibold">
       <UserCircleIcon />
-      {viewCount}
+      {data.viewCount}
     </p>
   );
 };

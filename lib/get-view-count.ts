@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 import { sleep } from "./utils";
 
 export async function getViewCount() {
-  await sleep(5000);
+  await sleep(1000);
   try {
     const data = await readFile("./data/view-count.txt", {
       encoding: "utf8",
