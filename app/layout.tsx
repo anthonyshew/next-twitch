@@ -18,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* TODO: Use a real skeleton for this fallback. */}
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

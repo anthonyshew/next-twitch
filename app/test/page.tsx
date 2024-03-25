@@ -1,8 +1,6 @@
 import { Chat } from "#components/chat.tsx";
-import { Header } from "#components/header.tsx";
 import { LeftNav } from "#components/left-nav.tsx";
 import { Main } from "#components/main.tsx";
-import { Suspense } from "react";
 
 export default function Home() {
   return (

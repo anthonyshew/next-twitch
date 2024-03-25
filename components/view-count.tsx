@@ -6,8 +6,12 @@ import useSWR from "swr";
 export const ViewCount = () => {
   const { data } = useSWR(
     "viewCount",
-    () => fetch("/api/get-view-count").then((res) => res.json()),
-    { refreshInterval: 2 },
+    () => {
+      console.log("client reval");
+      return fetch("/api/get-view-count").then((res) => res.json());
+    },
+
+    { refreshInterval: 5, revalidateOnMount: false, revalidateOnFocus: false },
   );
 
   return (
