@@ -7,7 +7,8 @@
     "build": "next build",
     "increment-data": "cd scripts && npx tsx incrementer.ts",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-types": "tsc --noEmit"
   },
   "imports": {
     "#*": "./*"

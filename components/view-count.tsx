@@ -1,27 +1,27 @@
+"use client";
+
 import { UserCircleIcon } from "lucide-react";
-import { readFile } from "node:fs/promises";
+import { useEffect, useState } from "react";
+import { viewCountAction } from "./view-count-action";
 
-const sleep = (delay: number) =>
-  new Promise((resolve) => setTimeout(resolve, delay));
+export const ViewCount = ({ daNumba }: { daNumba: number }) => {
+  const [viewCount, setViewCount] = useState<number>(daNumba);
 
-export const ViewCount = async () => {
-  async function getViewCount() {
-    await sleep(5000);
-    try {
-      const data = await readFile("./data/view-count.txt", {
-        encoding: "utf8",
-      });
-      return data;
-    } catch (err) {
-      // TODO: Handle error
-      console.log(err);
-    }
-  }
+  useEffect(() => {
+    const myInterval = setInterval(async () => {
+      // TODO: Handle this 0 better.
+      setViewCount((await viewCountAction()) ?? 0);
+    }, 5000);
+
+    return () => {
+      clearInterval(myInterval);
+    };
+  }, []);
 
   return (
     <p className="flex z-30 gap-2 text-red-600 font-semibold">
       <UserCircleIcon />
-      {await getViewCount()}
+      {viewCount}
     </p>
   );
 };

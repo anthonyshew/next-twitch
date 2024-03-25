@@ -18,7 +18,7 @@ const main = () => {
         }
       });
 
-      console.log("View count incremented!");
+      console.log(`View count incremented to ${viewCount}!`);
     });
   }, 1000);
 };
