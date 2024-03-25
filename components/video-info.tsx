@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { ViewCountRoot } from "./view-count-root";
@@ -15,7 +16,9 @@ export const VideoInfo = async () => {
         <div className="flex gap-2">
           <p className="text-white">anthonyshew</p>
         </div>
-        <ViewCountRoot />
+        <Suspense fallback={<p>Loading...</p>}>
+          <ViewCountRoot />
+        </Suspense>
         <div className="flex gap-4 items-center">
           <Button variant="secondary">Follow</Button>
           <Button>Subscribe</Button>
