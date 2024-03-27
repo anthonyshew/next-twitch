@@ -2,11 +2,13 @@ import { CogIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { ViewCountRoot } from "./view-count-root";
+import { ViewCountRootButSa } from "./view-count-root-but-sa";
 
 export const Chat = () => {
   return (
     <>
       <ViewCountRoot />
+      <ViewCountRootButSa />
       <aside className="w-80 py-4 px-2 h-screen flex flex-col gap-4 overflow-hidden bg-[#18181b]">
         <div className="flex justify-between items-center">
           <h3 className="text-white">STREAM CHAT</h3>

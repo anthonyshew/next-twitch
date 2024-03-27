@@ -6,8 +6,7 @@ import useSWR from "swr";
 export const ViewCount = () => {
   const { data } = useSWR(
     "viewCount",
-    () => {
-      console.log("client reval");
+    async () => {
       return fetch("/api/get-view-count").then((res) => res.json());
     },
 

@@ -1,5 +1,6 @@
 import { readFile } from "fs/promises";
 import { sleep } from "./utils";
+import { unstable_cache } from "next/cache";
 
 export async function getViewCount() {
   await sleep(1000);
@@ -12,4 +13,14 @@ export async function getViewCount() {
     // TODO: Handle error
     console.log(err);
   }
+}
+
+export async function getViewCountCached() {
+  const getCachedUser = unstable_cache(
+    async () => getViewCount(),
+    ["view-count"],
+    { revalidate: 5 },
+  );
+
+  return getCachedUser();
 }
