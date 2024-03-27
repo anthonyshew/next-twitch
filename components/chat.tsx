@@ -7,8 +7,10 @@ import { ViewCountRootButSa } from "./view-count-root-but-sa";
 export const Chat = () => {
   return (
     <>
-      <ViewCountRoot />
-      <ViewCountRootButSa />
+      <div className="flex flex-col">
+        <ViewCountRoot />
+        <ViewCountRootButSa />
+      </div>
       <aside className="w-80 py-4 px-2 h-screen flex flex-col gap-4 overflow-hidden bg-[#18181b]">
         <div className="flex justify-between items-center">
           <h3 className="text-white">STREAM CHAT</h3>

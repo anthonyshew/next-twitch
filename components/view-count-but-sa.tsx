@@ -3,12 +3,14 @@
 import { UserCircleIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getViewCountServerAction } from "./the-sa";
+import { unstable_noStore } from "next/cache";
 
 export const ViewCountButSa = ({
   initialViewCount,
 }: {
   initialViewCount: number;
 }) => {
+  unstable_noStore();
   const [views, setViews] = useState(initialViewCount);
 
   useEffect(() => {

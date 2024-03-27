@@ -24,3 +24,13 @@ export async function getViewCountCached() {
 
   return getCachedUser();
 }
+
+export async function getViewCountCachedButRevalZero() {
+  const getCachedUser = unstable_cache(
+    async () => getViewCount(),
+    ["view-count"],
+    { revalidate: false },
+  );
+
+  return getCachedUser();
+}
