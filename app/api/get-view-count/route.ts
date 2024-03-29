@@ -1,8 +1,8 @@
-import { getViewCount } from "#lib/get-view-count.ts";
+import { getViewCount, getViewCountCached } from "#lib/get-view-count.ts";
 
-export const revalidate = 5;
+export const revalidate = 0;
 
 export async function GET() {
-  const viewCount = await getViewCount();
+  const viewCount = await getViewCountCached();
   return Response.json({ viewCount });
 }

@@ -9,7 +9,6 @@ export const ViewCount = () => {
     async () => {
       return fetch("/api/get-view-count").then((res) => res.json());
     },
-
     { refreshInterval: 5, revalidateOnMount: false, revalidateOnFocus: false },
   );
 

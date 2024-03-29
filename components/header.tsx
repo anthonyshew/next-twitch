@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { Input } from "./ui/input";
 import { ViewCountRoot } from "./view-count-root";
 import Link from "next/link";
-import { ViewCountRootButSa } from "./view-count-root-but-sa";
 
 export const Header = async () => {
   return (
@@ -14,7 +13,6 @@ export const Header = async () => {
       <div className="flex items-center space-x-4">
         <Suspense fallback={<p>Loading...</p>}>
           <ViewCountRoot />
-          <ViewCountRootButSa />
         </Suspense>
         <Input className="rounded-md" placeholder="Search" type="search" />
       </div>

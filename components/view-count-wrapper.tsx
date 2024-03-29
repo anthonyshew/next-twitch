@@ -16,7 +16,6 @@ export const ViewCountWrapper = ({
       value={{
         fallback: {
           viewCount: initialViewCount,
-          viewCountPageOnly: initialViewCount,
         },
       }}
     >

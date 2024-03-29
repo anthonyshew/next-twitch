@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { ViewCountRoot } from "./view-count-root";
-import { ViewCountRootButSa } from "./view-count-root-but-sa";
 
 export const VideoInfo = async () => {
   return (
@@ -19,7 +18,6 @@ export const VideoInfo = async () => {
         </div>
         <Suspense fallback={<p>Loading...</p>}>
           <ViewCountRoot />
-          <ViewCountRootButSa />
         </Suspense>
         <div className="flex gap-4 items-center">
           <Button variant="secondary">Follow</Button>

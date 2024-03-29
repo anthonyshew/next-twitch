@@ -4,6 +4,9 @@ import { LeftNav } from "#components/left-nav.tsx";
 import { Main } from "#components/main.tsx";
 import { Suspense } from "react";
 
+// export const dynamic = "force-dynamic";
+export const revalidate = 5;
+
 export default function Home() {
   return (
     <>
