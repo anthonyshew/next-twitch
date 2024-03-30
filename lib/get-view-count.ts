@@ -5,10 +5,8 @@ import { unstable_cache } from "next/cache";
 export async function getViewCount() {
   await sleep(1000);
   try {
-    const data = await readFile("./data/view-count.txt", {
-      encoding: "utf8",
-    });
-    return parseInt(data);
+    // TODO: Implement this
+    return 0;
   } catch (err) {
     // TODO: Handle error
     console.log(err);

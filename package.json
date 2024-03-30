@@ -8,7 +8,10 @@
     "increment-data": "cd scripts && npx tsx incrementer.ts",
     "start": "next start",
     "lint": "next lint",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio"
   },
   "imports": {
     "#*": "./*"
@@ -18,25 +21,37 @@
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@vercel/postgres": "^0.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "drizzle-orm": "^0.30.6",
+    "drizzle-valibot": "^0.2.0",
     "lucide-react": "^0.359.0",
-    "next": "14.2.0-canary.42",
+    "next": "canary",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
     "swr": "^2.2.5",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "valibot": "^0.30.0"
   },
   "devDependencies": {
+    "@testcontainers/postgresql": "^10.8.0",
     "@types/node": "^20",
+    "@types/pg": "^8.11.4",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.20.14",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
+    "testcontainers": "^10.8.0",
+    "tsx": "^4.7.1",
     "typescript": "^5.4.2"
   }
 }
