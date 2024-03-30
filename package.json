@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "increment-data": "cd scripts && npx tsx incrementer.ts",
+    "increment-data": "tsx --watch ./scripts/incrementer.ts",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit",
