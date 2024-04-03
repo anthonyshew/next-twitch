@@ -21,5 +21,5 @@ export const ViewCountClient = ({
     },
   );
 
-  return <>{data}</>;
+  return <span className="w-4">{data}</span>;
 };

@@ -7,7 +7,7 @@ export const ViewCount = ({ channelSlug }: { channelSlug: string }) => {
     <>
       <div className="flex z-30 gap-2 text-red-600 font-semibold">
         <UserCircleIcon />
-        <Suspense fallback={<p className="w-12" />}>
+        <Suspense fallback={<p className="w-4" />}>
           <ViewCountInner channelSlug={channelSlug} />
         </Suspense>
       </div>

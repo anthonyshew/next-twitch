@@ -15,8 +15,8 @@ export const VideoInfo = ({ children }: { children: ReactNode }) => {
         <div className="flex gap-2">
           <p className="text-white">anthonyshew</p>
         </div>
-        {children}
         <div className="flex gap-4 items-center">
+          {children}
           <Button variant="secondary">Follow</Button>
           <Button>Subscribe</Button>
         </div>
