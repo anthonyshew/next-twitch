@@ -26,10 +26,6 @@ const main = () => {
             activeViewers: newViewerCount,
           })
           .where(eq(channels.id, channel.id));
-
-        if (channel.name === "Anthony Shew") {
-          console.log(`${channel.name} now has ${newViewerCount} viewers.`);
-        }
       }),
     );
   }, 1000);

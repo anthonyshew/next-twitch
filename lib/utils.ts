@@ -7,3 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const sleep = (delay: number) =>
   new Promise((resolve) => setTimeout(resolve, delay));
+
+export const channelNameToUrlSafe = (str: string) => {
+  return str.toLowerCase().replace(/ /g, "-");
+};

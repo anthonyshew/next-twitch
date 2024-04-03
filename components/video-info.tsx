@@ -1,9 +1,10 @@
-import { Suspense } from "react";
+"use client";
+
+import { ReactNode } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
-import { ViewCount } from "./view-count-root";
 
-export const VideoInfo = async () => {
+export const VideoInfo = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex items-center w-full mt-4 px-4 space-x-2">
       <Avatar>
@@ -16,9 +17,7 @@ export const VideoInfo = async () => {
         <div className="flex gap-2">
           <p className="text-white">anthonyshew</p>
         </div>
-        <Suspense fallback={<p>Loading...</p>}>
-          <ViewCount />
-        </Suspense>
+        {children}
         <div className="flex gap-4 items-center">
           <Button variant="secondary">Follow</Button>
           <Button>Subscribe</Button>
