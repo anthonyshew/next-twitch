@@ -28,10 +28,10 @@ export default function ChannelPage({
         <LeftNav />
         <div className="flex-grow overflow-auto no-scrollbar">
           <Video />
-          <VideoInfo>
+          <VideoInfo channelSlug={params.channel}>
             <ViewCount channelSlug={params.channel} />
           </VideoInfo>
-          <Bio />
+          {/* <Bio /> */}
         </div>
         <Chat />
       </div>
