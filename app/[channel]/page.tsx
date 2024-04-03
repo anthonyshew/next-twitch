@@ -3,8 +3,7 @@ import { Chat } from "#components/chat.tsx";
 import { LeftNav } from "#components/left-nav.tsx";
 import { VideoInfo } from "#components/video-info.tsx";
 import { Video } from "#components/video.tsx";
-import { ViewCount } from "#components/view-count-root.tsx";
-import { Suspense } from "react";
+import { ViewCountWrapper } from "#components/view-count-wrapper.tsx";
 
 export const dynamic = "force-dynamic";
 
@@ -22,9 +21,7 @@ export default function ChannelPage({
         <main className="flex-grow overflow-auto no-scrollbar">
           <Video />
           <VideoInfo>
-            <Suspense fallback={<p className="h-14">Loading...</p>}>
-              <ViewCount channelSlug={params.channel} />
-            </Suspense>
+            <ViewCountWrapper channelSlug={params.channel} />
           </VideoInfo>
           <Bio />
         </main>

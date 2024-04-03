@@ -1,6 +1,5 @@
 "use client";
 
-import { UserCircleIcon } from "lucide-react";
 import useSWR from "swr";
 
 export const ViewCountClient = ({
@@ -20,10 +19,5 @@ export const ViewCountClient = ({
     },
   );
 
-  return (
-    <p className="flex z-30 gap-2 text-red-600 font-semibold">
-      <UserCircleIcon />
-      {data}
-    </p>
-  );
+  return <>{data}</>;
 };

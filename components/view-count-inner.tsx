@@ -2,7 +2,11 @@ import { getViewCount } from "#lib/get-view-count.ts";
 import { ViewCountClient } from "./view-count";
 import { SWRConfig } from "swr";
 
-export const ViewCount = async ({ channelSlug }: { channelSlug: string }) => {
+export const ViewCountInner = async ({
+  channelSlug,
+}: {
+  channelSlug: string;
+}) => {
   // TODO: Handle the 0 better.
   const viewCount = (await getViewCount(channelSlug)) ?? 0;
 
