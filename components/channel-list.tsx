@@ -14,6 +14,7 @@ import { channels } from "#db/schema.ts";
 import { db } from "#db/index.ts";
 import Link from "next/link";
 import { channelNameToUrlSafe } from "#lib/utils.ts";
+import { ViewCount } from "./view-count-wrapper";
 
 export async function ChannelList() {
   const channelList = await db.select().from(channels).orderBy(channels.name);
@@ -39,7 +40,8 @@ export async function ChannelList() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="p-4">
+              <CardContent className="flex flex-col gap-4 p-4">
+                <ViewCount channelSlug={channel.slug} />
                 <p className="text-sm">{channel.description}</p>
               </CardContent>
             </Card>

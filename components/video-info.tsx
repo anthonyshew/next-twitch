@@ -1,10 +1,8 @@
-"use client";
-
 import { ReactNode } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 
-export const VideoInfo = async ({ children }: { children: ReactNode }) => {
+export const VideoInfo = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex items-center w-full mt-4 px-4 space-x-2">
       <Avatar>

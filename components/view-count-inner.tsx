@@ -14,11 +14,12 @@ export const ViewCountInner = async ({
     <SWRConfig
       value={{
         fallback: {
-          viewCount,
+          [`viewCount-${channelSlug}`]: viewCount,
         },
       }}
     >
       <ViewCountClient
+        channelSlug={channelSlug}
         getViewerCount={async () => {
           "use server";
           return getViewCount(channelSlug);

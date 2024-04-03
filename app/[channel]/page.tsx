@@ -3,9 +3,19 @@ import { Chat } from "#components/chat.tsx";
 import { LeftNav } from "#components/left-nav.tsx";
 import { VideoInfo } from "#components/video-info.tsx";
 import { Video } from "#components/video.tsx";
-import { ViewCountWrapper } from "#components/view-count-wrapper.tsx";
+import { ViewCount } from "#components/view-count-wrapper.tsx";
+import { db } from "#db/index.ts";
+import { channels } from "#db/schema.ts";
 
 export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const channelList = await db.select().from(channels);
+
+  return channelList.map((channel) => ({
+    channel: channel.slug,
+  }));
+}
 
 export default function ChannelPage({
   params,
@@ -15,16 +25,14 @@ export default function ChannelPage({
   return (
     <>
       <div className="flex h-screen bg-[#0e0e10]">
-        {/* Background dimmer! */}
-        {/* <div className="absolute z-10 bg-black/35 h-screen w-screen"></div> */}
         <LeftNav />
-        <main className="flex-grow overflow-auto no-scrollbar">
+        <div className="flex-grow overflow-auto no-scrollbar">
           <Video />
           <VideoInfo>
-            <ViewCountWrapper channelSlug={params.channel} />
+            <ViewCount channelSlug={params.channel} />
           </VideoInfo>
           <Bio />
-        </main>
+        </div>
         <Chat />
       </div>
     </>
