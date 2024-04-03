@@ -1,5 +1,7 @@
 import { Channels } from "#components/channels.tsx";
 
+export const revalidate = 5;
+
 export default function Home() {
   return (
     <>

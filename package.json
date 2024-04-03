@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "increment-data": "tsx --watch ./scripts/incrementer.ts",
+    "increment-data": "cd scripts && npx --watch tsx incrementer.ts",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit",
     "db:generate": "drizzle-kit generate:pg",
+    "db:seed": "tsx ./db/seed.ts",
     "db:push": "drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio"
   },
@@ -27,12 +28,12 @@
     "drizzle-orm": "^0.30.6",
     "drizzle-valibot": "^0.2.0",
     "lucide-react": "^0.359.0",
-    "next": "canary",
+    "next": "14.2.0-canary.51",
     "pg": "^8.11.3",
     "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
-    "swr": "^2.2.5",
+    "swr": "2.2.6-beta.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "valibot": "^0.30.0"
@@ -47,11 +48,11 @@
     "dotenv": "^16.4.5",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8",
-    "eslint-config-next": "14.1.4",
+    "eslint-config-next": "14.2.0-canary.54",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "testcontainers": "^10.8.0",
     "tsx": "^4.7.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   }
 }

@@ -1,34 +1,22 @@
-import { readFile } from "fs/promises";
-import { sleep } from "./utils";
+import { db } from "#db/index.ts";
+import { channels } from "#db/schema.ts";
+import { eq } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 
-export async function getViewCount() {
-  await sleep(1000);
-  try {
-    // TODO: Implement this
-    return 0;
-  } catch (err) {
-    // TODO: Handle error
-    console.log(err);
-  }
-}
+/** Get a channel's active viewer count, revalidated every 5 seconds. */
+export const getViewCount = unstable_cache(
+  async (name: string) => {
+    const channelArr = await db
+      .select({ activeViewerCount: channels.activeViewers })
+      .from(channels)
+      .where(eq(channels.name, name));
 
-export async function getViewCountCached() {
-  const getCachedUser = unstable_cache(
-    async () => getViewCount(),
-    ["view-count"],
-    { revalidate: 5 },
-  );
+    if (!channelArr.length) {
+      throw new Error("No channel found.");
+    }
 
-  return getCachedUser();
-}
-
-export async function getViewCountCachedButRevalZero() {
-  const getCachedUser = unstable_cache(
-    async () => getViewCount(),
-    ["view-count"],
-    { revalidate: false },
-  );
-
-  return getCachedUser();
-}
+    return channelArr?.[0].activeViewerCount;
+  },
+  ["channel-active-viewer-count"],
+  { revalidate: 5 },
+);

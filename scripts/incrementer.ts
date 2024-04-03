@@ -20,14 +20,16 @@ const main = () => {
           Math.max(25, addOrSubtractRandomNumberInRange(channel.activeViewers)),
         );
 
-        console.log(newViewerCount);
-
         await db
           .update(channels)
           .set({
             activeViewers: newViewerCount,
           })
           .where(eq(channels.id, channel.id));
+
+        if (channel.name === "Anthony Shew") {
+          console.log(`${channel.name} now has ${newViewerCount} viewers.`);
+        }
       }),
     );
   }, 1000);
