@@ -10,16 +10,17 @@ import {
   type PostgresJsDatabase,
 } from "drizzle-orm/postgres-js";
 
+export const localDbUrl =
+  "postgresql://postgres:postgres@localhost:5432/my-local-db";
+
 let db:
   | VercelPgDatabase<Record<string, never>>
   | PostgresJsDatabase<Record<string, never>>;
-if (process.env.VERCEL_ENV === "production") {
+if (process.env.VERCEL) {
   db = VercelDrizzle(sql);
 } else {
   db = devDrizzle(
-    postgres(
-      "postgresql://postgres:postgres@localhost:5432/my-local-db" as string,
-    ),
+    postgres(localDbUrl),
     // { logger },
   );
 }

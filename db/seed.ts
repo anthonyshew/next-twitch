@@ -71,9 +71,16 @@ const vercelDevRels: Array<Channels> = [
 ];
 
 export const seedDb = async () => {
-  await Promise.all(
-    vercelDevRels.map((dev) => db.insert(channels).values(dev)),
-  );
+  try {
+    await Promise.all(
+      vercelDevRels.map((dev) => db.insert(channels).values(dev)),
+    );
+  } catch (error) {
+    console.error(
+      "Failing gracefully. Your database was probably already seeded.",
+    );
+    process.exit(0);
+  }
 
   console.log("Seeding complete. 🌱");
   process.exit(0);
