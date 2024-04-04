@@ -6,11 +6,15 @@
 4. Open another terminal and run `pnpm go`.
 5. Open `http://localhost:3000`.
 
+### If you need to reset
+
+Kill the terminals and run `pnpm reset`.
+
 ## Branches
 
-`main`: Using `force-dynamic` to try to keep data fresh. (Doesn't work...)
-`ppr`: Using `ppr` and `noStore()` to try to keep data fresh. (Doesn't work...)
-`stale-times`: Using `staleTimes` to try to keep data fresh. (It's works!)
+- `main`: Using `force-dynamic` to try to keep data fresh. (Doesn't work...)
+- `ppr`: Using `ppr` and `noStore()` to try to keep data fresh. (Doesn't work...)
+- `stale-times`: Using `staleTimes` to try to keep data fresh. (It's works!)
 
 ## Problem I'm having
 
