@@ -13,7 +13,7 @@ import {
 import { channels } from "#db/schema.ts";
 import { db } from "#db/index.ts";
 import Link from "next/link";
-import { ViewCount } from "./view-count-wrapper";
+import { ViewCount } from "./view-count";
 
 export async function ChannelList() {
   const channelList = await db.select().from(channels).orderBy(channels.name);
