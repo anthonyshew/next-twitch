@@ -1,25 +1,25 @@
-"use client";
+import { UserCircleIcon } from "lucide-react";
+import { ViewCountInner } from "./view-count-inner";
+import { Suspense } from "react";
 
-import useSWR from "swr";
-
-export const ViewCountClient = ({
-  getViewerCount,
+export const ViewCount = ({
   channelSlug,
+  noRevalidate,
 }: {
-  getViewerCount: undefined | (() => Promise<number>);
   channelSlug: string;
+  noRevalidate?: boolean;
 }) => {
-  const { data } = useSWR(
-    `viewCount-${channelSlug}`,
-    async () => {
-      return getViewerCount?.();
-    },
-    {
-      refreshInterval: 3000,
-      revalidateOnMount: false,
-      revalidateOnFocus: false,
-    },
+  return (
+    <>
+      <div className="flex z-30 gap-2 text-red-600 font-semibold">
+        <UserCircleIcon />
+        <Suspense fallback={<p className="w-5" />}>
+          <ViewCountInner
+            noRevalidate={noRevalidate}
+            channelSlug={channelSlug}
+          />
+        </Suspense>
+      </div>
+    </>
   );
-
-  return <span className="w-5">{data}</span>;
 };

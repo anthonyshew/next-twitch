@@ -1,5 +1,5 @@
 import { getViewCount } from "#lib/get-view-count.ts";
-import { ViewCountClient } from "./view-count";
+import { ViewCountData } from "./view-count-data";
 import { SWRConfig } from "swr";
 
 export const ViewCountInner = async ({
@@ -19,7 +19,7 @@ export const ViewCountInner = async ({
         },
       }}
     >
-      <ViewCountClient
+      <ViewCountData
         channelSlug={channelSlug}
         getViewerCount={
           noRevalidate
