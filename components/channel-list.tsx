@@ -41,7 +41,7 @@ export async function ChannelList() {
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col gap-4 p-4">
-                <ViewCount channelSlug={channel.slug} />
+                <ViewCount noRevalidate channelSlug={channel.slug} />
                 <p className="text-sm">{channel.description}</p>
               </CardContent>
             </Card>

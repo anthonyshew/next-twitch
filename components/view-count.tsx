@@ -6,13 +6,13 @@ export const ViewCountClient = ({
   getViewerCount,
   channelSlug,
 }: {
-  getViewerCount: () => Promise<number>;
+  getViewerCount: undefined | (() => Promise<number>);
   channelSlug: string;
 }) => {
   const { data } = useSWR(
     `viewCount-${channelSlug}`,
     async () => {
-      return getViewerCount();
+      return getViewerCount?.();
     },
     {
       refreshInterval: 5000,
