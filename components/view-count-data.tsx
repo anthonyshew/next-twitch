@@ -16,8 +16,6 @@ export const ViewCountData = ({
     },
     {
       refreshInterval: 3000,
-      revalidateOnMount: false,
-      revalidateOnFocus: false,
     },
   );
 
