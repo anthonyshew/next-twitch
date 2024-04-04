@@ -13,13 +13,12 @@ import {
 import { channels } from "#db/schema.ts";
 import { db } from "#db/index.ts";
 import Link from "next/link";
-import { channelNameToUrlSafe } from "#lib/utils.ts";
 import { ViewCount } from "./view-count-wrapper";
 
 export async function ChannelList() {
   const channelList = await db.select().from(channels).orderBy(channels.name);
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 py-2 xs:px-2 sm:px-4">
       {channelList.map((channel) => {
         return (
           <Link key={channel.id} href={channel.slug}>

@@ -9,8 +9,7 @@ export const ViewCountInner = async ({
   channelSlug: string;
   noRevalidate?: boolean;
 }) => {
-  // TODO: Handle the 0 better.
-  const viewCount = (await getViewCount(channelSlug)) ?? 0;
+  const viewCount = await getViewCount(channelSlug);
 
   return (
     <SWRConfig

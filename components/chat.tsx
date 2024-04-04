@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 
 export const Chat = () => {
   return (
-    <aside className="w-80 py-4 px-2 h-screen flex flex-col gap-4 overflow-hidden bg-[#18181b]">
+    <aside className="w-80 py-4 px-2 min-h-full flex flex-col gap-4 overflow-hidden bg-[#18181b]">
       <div className="flex justify-between items-center">
         <h3 className="text-white">STREAM CHAT</h3>
         <CogIcon className="text-white" />

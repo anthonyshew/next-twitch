@@ -13,11 +13,11 @@ export const LeftNav = () => {
       <Link href="/">
         <HomeIcon className="text-white" />
       </Link>
-      <CompassIcon className="text-white" />
-      <MenuIcon className="text-white" />
+      <CompassIcon className="text-white/20" />
+      <MenuIcon className="text-white/20" />
       <div className="flex-grow" />
-      <CogIcon className="text-white" />
-      <UserCircleIcon className="text-white" />
+      <CogIcon className="text-white/20" />
+      <UserCircleIcon className="text-white/20" />
     </aside>
   );
 };

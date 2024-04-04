@@ -9,13 +9,13 @@ import { channels } from "#db/schema.ts";
 
 export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  const channelList = await db.select().from(channels);
-
-  return channelList.map((channel) => ({
-    channel: channel.slug,
-  }));
-}
+// export async function generateStaticParams() {
+//   const channelList = await db.select().from(channels);
+//
+//   return channelList.map((channel) => ({
+//     channel: channel.slug,
+//   }));
+// }
 
 export default function ChannelPage({
   params,
@@ -24,17 +24,15 @@ export default function ChannelPage({
 }) {
   return (
     <>
-      <div className="flex h-screen bg-[#0e0e10]">
-        <LeftNav />
-        <div className="flex-grow overflow-auto no-scrollbar">
-          <Video />
-          <VideoInfo channelSlug={params.channel}>
-            <ViewCount channelSlug={params.channel} />
-          </VideoInfo>
-          {/* <Bio /> */}
-        </div>
-        <Chat />
+      <LeftNav />
+      <div className="flex-grow overflow-auto no-scrollbar">
+        <Video />
+        <VideoInfo channelSlug={params.channel}>
+          <ViewCount channelSlug={params.channel} />
+        </VideoInfo>
+        {/* <Bio /> */}
       </div>
+      <Chat />
     </>
   );
 }

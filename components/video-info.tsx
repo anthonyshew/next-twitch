@@ -5,7 +5,6 @@ import { channels } from "#db/schema.ts";
 import { eq } from "drizzle-orm";
 import { db } from "#db/index.ts";
 
-// TODO: Make all this dynamic for the channel.
 export const VideoInfo = async ({
   channelSlug,
   children,
