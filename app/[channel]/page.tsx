@@ -1,4 +1,4 @@
-import { Bio } from "#components/bio.tsx";
+// import { Bio } from "#components/bio.tsx";
 import { Chat } from "#components/chat.tsx";
 import { LeftNav } from "#components/left-nav.tsx";
 import { VideoInfo } from "#components/video-info.tsx";
