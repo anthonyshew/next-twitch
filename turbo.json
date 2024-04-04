@@ -1,0 +1,38 @@
+{
+  "pipeline": {
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "reset": {
+      "cache": false
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "data-loop": {
+      "dependsOn": ["db:seed"],
+      "cache": false,
+      "persistent": true
+    },
+    "db:seed": {
+      "dependsOn": ["db:push"],
+      "cache": false
+    },
+    "db:push": {
+      "dependsOn": ["docker:up"],
+      "cache": false
+    },
+    "docker:up": {
+      "cache": false
+    }
+  }
+}

@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "get-ready": "turbo data-loop",
+    "go": "turbo start",
+    "reset": "turbo docker:down",
     "dev": "next dev",
     "build": "next build",
-    "data-loop": "cd scripts && npx tsx data-loop.ts",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "data-loop": "cd scripts && npx tsx data-loop.ts",
     "db:generate": "drizzle-kit generate:pg",
     "db:seed": "tsx ./db/seed.ts",
-    "db:push": "drizzle-kit push:pg",
+    "db:push": "sleep 2 && drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio"
   },
   "imports": {
@@ -50,6 +55,7 @@
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "tsx": "^4.7.1",
+    "turbo": "^1.13.2",
     "typescript": "^5.4.3"
   }
 }
