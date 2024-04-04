@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "data-loop": "cd scripts && npx --watch tsx data-loop.ts",
+    "data-loop": "cd scripts && npx tsx data-loop.ts",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit",
