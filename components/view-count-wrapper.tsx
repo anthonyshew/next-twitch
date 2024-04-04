@@ -13,7 +13,7 @@ export const ViewCount = ({
     <>
       <div className="flex z-30 gap-2 text-red-600 font-semibold">
         <UserCircleIcon />
-        <Suspense fallback={<p className="w-4" />}>
+        <Suspense fallback={<p className="w-5" />}>
           <ViewCountInner
             noRevalidate={noRevalidate}
             channelSlug={channelSlug}

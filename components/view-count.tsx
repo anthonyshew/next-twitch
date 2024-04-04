@@ -15,11 +15,11 @@ export const ViewCountClient = ({
       return getViewerCount?.();
     },
     {
-      refreshInterval: 5000,
+      refreshInterval: 3000,
       revalidateOnMount: false,
       revalidateOnFocus: false,
     },
   );
 
-  return <span className="w-4">{data}</span>;
+  return <span className="w-5">{data}</span>;
 };

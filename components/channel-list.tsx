@@ -39,9 +39,9 @@ export async function ChannelList() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="flex flex-col gap-4 p-4">
-                <ViewCount noRevalidate channelSlug={channel.slug} />
+              <CardContent className="flex flex-col justify-between items-end gap-4 p-4">
                 <p className="text-sm">{channel.description}</p>
+                <ViewCount noRevalidate channelSlug={channel.slug} />
               </CardContent>
             </Card>
           </Link>

@@ -4,6 +4,7 @@ import { randomNumberInRange } from "#lib/random-number-in-range.js";
 import { eq } from "drizzle-orm";
 
 const main = () => {
+  // Updating viewer count every second
   setInterval(async () => {
     const channelList = await db.select().from(channels);
 

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "increment-data": "cd scripts && npx --watch tsx incrementer.ts",
+    "data-loop": "cd scripts && npx --watch tsx data-loop.ts",
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit",
@@ -45,7 +45,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8",
     "eslint-config-next": "14.2.0-canary.54",
