@@ -1,4 +1,4 @@
-// import {logger} from './logger'
+// import { logger } from "./logger";
 import { sql } from "@vercel/postgres";
 import postgres from "postgres";
 import {
@@ -21,7 +21,7 @@ if (process.env.VERCEL) {
 } else {
   db = devDrizzle(
     postgres(localDbUrl),
-    // { logger },
+    // { logger }
   );
 }
 

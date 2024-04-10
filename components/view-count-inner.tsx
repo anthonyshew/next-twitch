@@ -14,6 +14,7 @@ export const ViewCountInner = async ({
   return (
     <SWRConfig
       value={{
+        dedupingInterval: 0,
         fallback: {
           [`viewCount-${channelSlug}`]: viewCount,
         },
