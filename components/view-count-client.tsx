@@ -3,16 +3,16 @@
 import useSWR from "swr";
 
 export const ViewCountClient = ({
-  getViewerCount,
+  refetcherAction,
   cacheKey,
 }: {
-  getViewerCount: undefined | (() => Promise<number>);
+  refetcherAction: undefined | (() => Promise<number>);
   cacheKey: string;
 }) => {
   const { data } = useSWR(
     cacheKey,
     async () => {
-      return getViewerCount?.();
+      return refetcherAction?.();
     },
     {
       refreshInterval: getViewerCount ? 3000 : undefined,

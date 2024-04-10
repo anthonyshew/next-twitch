@@ -24,7 +24,7 @@ export const ViewCountInner = async ({
     >
       <ViewCountClient
         cacheKey={cacheKey}
-        getViewerCount={
+        refetcherAction={
           noRevalidate
             ? undefined
             : async () => {
