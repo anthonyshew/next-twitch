@@ -15,7 +15,7 @@ export const ViewCountData = ({
       return getViewerCount?.();
     },
     {
-      refreshInterval: 3000,
+      refreshInterval: getViewerCount ? 3000 : undefined,
     },
   );
 
