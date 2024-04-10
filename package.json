@@ -15,7 +15,7 @@
     "docker:down": "docker-compose down",
     "data-loop": "cd scripts && npx tsx data-loop.ts",
     "db:generate": "drizzle-kit generate:pg",
-    "db:seed": "tsx ./db/seed.ts",
+    "db:seed": "tsx ./scripts/seed.ts",
     "db:push": "sleep 2 && drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio"
   },
@@ -44,6 +44,7 @@
     "valibot": "^0.30.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@types/node": "^20",
     "@types/pg": "^8.11.4",
     "@types/react": "^18",
