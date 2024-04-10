@@ -15,7 +15,7 @@ export const ViewCountClient = ({
       return refetcherAction?.();
     },
     {
-      refreshInterval: getViewerCount ? 3000 : undefined,
+      refreshInterval: refetcherAction ? 3000 : undefined,
     },
   );
 
