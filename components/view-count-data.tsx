@@ -4,13 +4,13 @@ import useSWR from "swr";
 
 export const ViewCountData = ({
   getViewerCount,
-  channelSlug,
+  cacheKey,
 }: {
   getViewerCount: undefined | (() => Promise<number>);
-  channelSlug: string;
+  cacheKey: string;
 }) => {
   const { data } = useSWR(
-    `viewCount-${channelSlug}`,
+    cacheKey,
     async () => {
       return getViewerCount?.();
     },

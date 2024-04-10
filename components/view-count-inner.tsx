@@ -11,17 +11,19 @@ export const ViewCountInner = async ({
 }) => {
   const viewCount = await getViewCount(channelSlug);
 
+  const cacheKey = `viewCount-${channelSlug}`;
+
   return (
     <SWRConfig
       value={{
         dedupingInterval: 0,
         fallback: {
-          [`viewCount-${channelSlug}`]: viewCount,
+          [cacheKey]: viewCount,
         },
       }}
     >
       <ViewCountData
-        channelSlug={channelSlug}
+        cacheKey={cacheKey}
         getViewerCount={
           noRevalidate
             ? undefined
