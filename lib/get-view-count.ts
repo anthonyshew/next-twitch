@@ -7,6 +7,9 @@ import { sleep } from "./utils";
 /** Get a channel's active viewer count, revalidated every 5 seconds. */
 export const getViewCount = unstable_cache(
   async (slug: string) => {
+    // Simulating a network or larger system
+    await sleep(2000);
+
     const channelArr = await db
       .select({ activeViewerCount: channels.activeViewers })
       .from(channels)
@@ -16,8 +19,6 @@ export const getViewCount = unstable_cache(
       throw new Error("No channel found.");
     }
 
-    // Simulating a network or larger system
-    await sleep(2000);
     return channelArr?.[0].activeViewerCount;
   },
   ["channel-active-viewer-count"],
