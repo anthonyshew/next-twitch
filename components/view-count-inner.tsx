@@ -1,5 +1,5 @@
 import { getViewCount } from "#lib/get-view-count.ts";
-import { ViewCountData } from "./view-count-data";
+import { ViewCountClient } from "./view-count-client";
 import { SWRConfig } from "swr";
 
 export const ViewCountInner = async ({
@@ -22,7 +22,7 @@ export const ViewCountInner = async ({
         },
       }}
     >
-      <ViewCountData
+      <ViewCountClient
         cacheKey={cacheKey}
         getViewerCount={
           noRevalidate

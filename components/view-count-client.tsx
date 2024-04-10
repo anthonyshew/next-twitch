@@ -2,7 +2,7 @@
 
 import useSWR from "swr";
 
-export const ViewCountData = ({
+export const ViewCountClient = ({
   getViewerCount,
   cacheKey,
 }: {
