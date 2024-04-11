@@ -17,7 +17,7 @@ const main = () => {
 
         // Bounded between 25 and 99
         const newViewerCount = Math.min(
-          99,
+          250,
           Math.max(25, addOrSubtractRandomNumberInRange(channel.activeViewers)),
         );
 

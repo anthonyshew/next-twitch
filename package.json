@@ -33,7 +33,7 @@
     "drizzle-orm": "^0.30.6",
     "drizzle-valibot": "^0.2.0",
     "lucide-react": "^0.359.0",
-    "next": "14.2.0-canary.51",
+    "next": "14.2.0-canary.66",
     "pg": "^8.11.3",
     "postgres": "^3.4.4",
     "react": "^18",
