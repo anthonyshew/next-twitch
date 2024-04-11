@@ -5,8 +5,6 @@ import { VideoInfo } from "#components/video-info.tsx";
 import { Video } from "#components/video.tsx";
 import { ViewCount } from "#components/view-count/index.tsx";
 
-export const dynamic = "force-dynamic";
-
 export default function ChannelPage({
   params,
 }: {

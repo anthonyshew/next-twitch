@@ -1,6 +1,7 @@
 import { UserCircleIcon } from "lucide-react";
 import { ViewCountInner } from "./inner";
 import { Suspense } from "react";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const ViewCount = ({
   channelSlug,
@@ -9,6 +10,8 @@ export const ViewCount = ({
   channelSlug: string;
   noRevalidate?: boolean;
 }) => {
+  noStore();
+
   return (
     <>
       <div className="flex z-30 gap-2 text-red-600 font-semibold">
