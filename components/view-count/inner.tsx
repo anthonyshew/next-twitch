@@ -1,5 +1,6 @@
 import { getViewCount } from "#lib/get-view-count.ts";
-import { ViewCountClient } from "./view-count-client";
+import { sleep } from "#lib/utils.ts";
+import { ViewCountClient } from "./client";
 import { SWRConfig } from "swr";
 
 export const ViewCountInner = async ({
@@ -9,6 +10,7 @@ export const ViewCountInner = async ({
   channelSlug: string;
   noRevalidate?: boolean;
 }) => {
+  await sleep(2000);
   const viewCount = await getViewCount(channelSlug);
 
   const cacheKey = `viewCount-${channelSlug}`;

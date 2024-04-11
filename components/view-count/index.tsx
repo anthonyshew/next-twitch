@@ -1,5 +1,5 @@
 import { UserCircleIcon } from "lucide-react";
-import { ViewCountInner } from "./view-count-inner";
+import { ViewCountInner } from "./inner";
 import { Suspense } from "react";
 
 export const ViewCount = ({
