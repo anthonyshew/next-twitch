@@ -3,7 +3,7 @@ import { Chat } from "#components/chat.tsx";
 import { LeftNav } from "#components/left-nav.tsx";
 import { VideoInfo } from "#components/video-info.tsx";
 import { Video } from "#components/video.tsx";
-import { ViewCount } from "#components/view-count.tsx";
+import { ViewCount } from "#components/view-count/index.tsx";
 
 export const dynamic = "force-dynamic";
 
