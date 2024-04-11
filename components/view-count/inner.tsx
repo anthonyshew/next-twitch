@@ -10,7 +10,7 @@ export const ViewCountInner = async ({
   channelSlug: string;
   noRevalidate?: boolean;
 }) => {
-  await sleep(2000);
+  await sleep(1000);
   const viewCount = await getViewCount(channelSlug);
 
   const cacheKey = `viewCount-${channelSlug}`;
